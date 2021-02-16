@@ -1,0 +1,57 @@
+.guia {
+	background: var(--white);
+	color: var(--dark-blue);
+	padding: 150px 0px;
+}
+
+.p-guia {
+	text-align: justify;
+}
+
+.inline-code {
+	background: var(--dark-blue);
+	color: var(--white);
+	padding: 5px;
+	padding-top: 3px;
+	border-radius: 5px;
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 500;
+}
+
+.block-code {
+	background: var(--dark-blue);
+	color: var(--white);
+	border-radius: 5px;
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 600;
+	padding: 15px 20px;
+	text-justify: left !important;
+}
+
+.guia em {
+	color: var(--pink);
+	font-style: normal;
+	font-weight: 700;
+}
+
+.guia h2 {
+	font-size: 45px;
+	font-weight: 900;
+	margin: 0px 0px 50px 0px;
+}
+
+.guia h3 {
+	font-size: 35px;
+	font-weight: 800;
+	margin: 80px 0px 20px 0px;
+}
+
+.guia h4 {
+	font-size: 25px;
+	font-weight: 800;
+	margin: 50px 0px 20px 0px;
+}
+
+.guia p {
+	margin: 15px 0px;
+}

@@ -1,0 +1,93 @@
+.splash {
+	background: var(--dark-blue);
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.splash--top {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.splash--bottom {
+	height: 7vh;
+	width: 100%;
+}
+
+.splash--left {
+	padding: 40px 30px;
+}
+
+.splash h1 {
+	margin: 20px 0px;
+	font-weight: 800;
+	font-size: 3.2em;
+	color: var(--pink);
+}
+
+.share-icon {
+	color: var(--white);
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+.splash--share .share-icon:hover,
+.share-icon:focus,
+.share-icon:active {
+	color: var(--pink);
+}
+
+section form {
+	margin: 30px 5px;
+	width: 500px;
+	max-width: 90% !important;
+}
+
+.form-item {
+	margin: 10px 0px;
+}
+
+#textarea {
+	background: none;
+	color: var(--white);
+	font-size: 1em;
+	line-height: 27px;
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 600;
+	padding: 20px 25px;
+	width: 100%;
+	max-height: 70vh;
+}
+
+.btn-form {
+	background: none;
+	border-color: var(--white);
+	color: var(--white);
+	font-weight: 700;
+}
+
+.btn-form:hover {
+	background: var(--white);
+	color: var(--dark-blue);
+	border-color: var(--white);
+}
+
+.btn-modal {
+	background: var(--dark-blue);
+	border-color: var(--dark-blue);
+	color: var(--white);
+	font-weight: 500;
+}
+
+.btn-modal:hover,
+.btn-modal:active,
+.btn-modal:focus {
+	background: var(--pink);
+	border-color: var(--pink);
+	color: var(--white);
+}

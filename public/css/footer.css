@@ -1,0 +1,11 @@
+footer {
+  background: var(--dark-blue);
+  /* height: 200px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 50px;
+}

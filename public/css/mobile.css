@@ -1,0 +1,8 @@
+@media (max-width: 991px) {
+  header {
+    height: 70px;
+  }
+  .splash {
+    height: 1000px;
+  }
+}

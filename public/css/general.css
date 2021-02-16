@@ -1,0 +1,20 @@
+
+body {
+    font-family: 'Gotham';
+    background: var(--dark-blue);
+    color: var(--white);
+    /* color: var(--light-blue); */
+    /* color: var(--pink); */
+
+    -webkit-font-smoothing: antialiased;
+    /* -moz-osx-font-smoothing: grayscale; */
+
+}
+
+.btn-primary:hover {
+    background: var(--light-blue);
+}
+
+a {
+    text-decoration: none;
+}

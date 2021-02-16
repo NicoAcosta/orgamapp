@@ -1,0 +1,29 @@
+/* .orgImg {
+	width: 90%;
+} */
+
+.modal-body {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	max-height: 60vh;
+	min-height: 400px;
+}
+
+.modal img {
+	/* width: 80% !important;
+	max-width: 80% !important; */
+	margin: 20px;
+	max-width: 90%;
+	object-fit: scale-down;
+}
+
+/* #resultModal .modal-dialog {
+	max-width: 90vw;
+	max-height: 80vh;
+} */
+
+/* .modal-body {
+	max-width: 80vw;
+	max-height: 80vh;
+} */

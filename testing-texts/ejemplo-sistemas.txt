@@ -1,0 +1,11 @@
+raiz AGA
+AGA -> Directorio
+Directorio -> Gerencia general
+Gerencia General -> Gerencia de Compras
+Gerencia General -> Gerencia de Ventas
+Gerencia General -> Gerencia de Administración
+Gerencia General -> Gerencia de Sistemas
+Gerencia de Sistemas -> Departamento Front End
+Gerencia de Sistemas -> Departamento Back End
+Departamento Back End -> Oficina Python
+
