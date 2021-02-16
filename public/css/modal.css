@@ -1,29 +1,26 @@
-/* .orgImg {
-	width: 90%;
+/* .modal-content {
+	max-height: 70vh;
+	min-height: 600px;
+	max-width: 90vh;
+	min-width: 300px;
 } */
 
-.modal-body {
+#resultModal-dialog {
 	display: flex;
 	justify-content: center;
-	/* align-items: center; */
-	max-height: 60vh;
-	min-height: 400px;
+	align-items: center;
+	width: auto;
 }
 
-.modal img {
-	/* width: 80% !important;
-	max-width: 80% !important; */
+#graphImageArea {
+	max-height: 60vh;
+	max-width: 90vw;
+	display: flex;
+	justify-content: center;
+}
+
+#resultModal img {
 	margin: 20px;
 	max-width: 90%;
 	object-fit: scale-down;
 }
-
-/* #resultModal .modal-dialog {
-	max-width: 90vw;
-	max-height: 80vh;
-} */
-
-/* .modal-body {
-	max-width: 80vw;
-	max-height: 80vh;
-} */

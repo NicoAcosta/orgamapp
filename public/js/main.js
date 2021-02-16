@@ -1,10 +1,8 @@
-//import {ImageHelper} from './image.mjs'
-
 const button = document.getElementById('button')
 const graphSketch = document.getElementById('graphSketch')
 const graphImageArea = document.getElementById('graphImageArea')
 const downloadButton = document.getElementById('downloadButton')
-// let openInNewTabButton = document.getElementById('openInNewTabButton')
+downloadButton.download = 'orgamapp.png'
 
 const resultModal = new bootstrap.Modal(
 	document.getElementById('resultModal'),
@@ -36,29 +34,15 @@ function graph() {
 
 		const organizationChart = graphSketch.firstChild
 
-		html2canvas(organizationChart).then((canvas) => {
-			graphSketch.removeChild(graphSketch.firstChild)
-			graphSketch.appendChild(canvas)
-
-			// setTimeout(() => {
-			// let [image, url] = ImageHelper.canvasToImage(canvas)
-			const [image, url] = canvasToImage(canvas)
-
+		domtoimage.toPng(organizationChart).then(function (dataUrl) {
+			let image = document.createElement('img')
+			image.src = dataUrl
 			graphSketch.removeChild(graphSketch.firstChild)
 			graphImageArea.appendChild(image)
-
-			downloadButton.href = url
-			downloadButton.download = 'orgamapp.png'
-
-			setTimeout(() => {
-				loadingModal.hide()
-				resultModal.toggle()
-				resultModal.show()
-			}, 200)
-			// }, 500)
-
-			// openInNewTabButton.href = url
-			// }, 1000)
+			downloadButton.href = dataUrl
+			loadingModal.hide()
+			resultModal.toggle()
+			resultModal.show()
 		})
 	})
 }
@@ -68,22 +52,8 @@ function graphButton() {
 	loadingModal.show()
 	window.scrollTo(0, 0)
 	graph()
-
-	// setTimeout(function () {
-	// 	// 	loadingModal.toggle()
-	// 	// 	loadingModal.show()
-	// 	graph()
-	// }, 1000)
 }
 
 button.addEventListener('click', () => {
 	graphButton()
 })
-
-function canvasToImage(canvas) {
-	const url = canvas.toDataURL('image/png')
-	const image = document.createElement('img')
-	image.src = url
-	image.classList.add('orgImg')
-	return [image, url]
-}
