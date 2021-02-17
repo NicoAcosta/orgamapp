@@ -34,16 +34,29 @@ function graph() {
 
 		const organizationChart = graphSketch.firstChild
 
-		domtoimage.toPng(organizationChart).then(function (dataUrl) {
-			let image = document.createElement('img')
-			image.src = dataUrl
-			graphSketch.removeChild(graphSketch.firstChild)
-			graphImageArea.appendChild(image)
-			downloadButton.href = dataUrl
-			loadingModal.hide()
-			resultModal.toggle()
-			resultModal.show()
-		})
+		setTimeout(() => {
+			domtoimage.toPng(organizationChart).then(function (dataUrl) {
+				let image = document.createElement('img')
+				image.src = dataUrl
+				graphSketch.removeChild(graphSketch.firstChild)
+				graphImageArea.appendChild(image)
+				downloadButton.href = dataUrl
+				loadingModal.hide()
+				resultModal.toggle()
+				resultModal.show()
+			})
+		}, 200)
+
+		// domtoimage.toPng(organizationChart).then(function (dataUrl) {
+		// 	let image = document.createElement('img')
+		// 	image.src = dataUrl
+		// 	graphSketch.removeChild(graphSketch.firstChild)
+		// 	graphImageArea.appendChild(image)
+		// 	downloadButton.href = dataUrl
+		// 	loadingModal.hide()
+		// 	resultModal.toggle()
+		// 	resultModal.show()
+		// })
 	})
 }
 
