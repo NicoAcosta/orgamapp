@@ -1,4 +1,4 @@
-# Organigramas
+# OrgaMapp
 
 
 
@@ -26,12 +26,12 @@ Se utiliza una flecha `->`
 ```
 Gerencia General -> Gerencia de Sistemas
 ```
-La Gerencia de Sistemas depende de la Gerencia General.
+*La Gerencia de Sistemas depende de la Gerencia General.*
 
 
 #### Dependencias múltiples
 
-La cantidad de guiones que componen la flecha indican la difencia de nivel de jerarquía entre ambas áreas.
+Para agregar más de una dependencia a la vez, se escriben las áreas entre corchetes separadas por comas. Todo dentro de la misma línea.
 
 ```
 Gerencia de Sistemas -> [Departamento de Diseño, Deparamento de Desarrollo, Departamento de QA]
@@ -44,13 +44,15 @@ Gerencia de Sistemas -> Departamento de QA
 ```
 
 #### Dependencias de distinto nivel jerárquico
+
+La cantidad de guiones que componen la flecha indican la difencia de nivel de jerarquía entre ambas áreas. Siendo `-->` para una diferencia de 2 niveles, `--->` para tres, etc.
+
 ```
 Departamento de Desarrollo -> Sección de Front End
 Departamento de Desarrollo -> Sección de Back End
 Departamento de Desarrollo --> Oficina de AI
 ```
-El Departamento de Desarrollo tiene dos Secciones y una Oficina (que es de menor nivel jerárquico).
-
+*Del Departamento de Desarrollo dependen dos Secciones y una Oficina (que es de menor nivel jerárquico).*
 
 
 ### Definir asesorías
@@ -60,5 +62,5 @@ Se utiliza el símbolo `a>`
 ```
 Gerencia de Finanzas a> Asesoría Legal
 ```
-El gerente de Finanzas recibe asesoría en materia legal.
+*El gerente de Finanzas recibe asesoría en materia legal.*
 
