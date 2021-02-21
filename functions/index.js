@@ -1,10 +1,9 @@
 const functions = require('firebase-functions')
-// const express = require('express')
 
 const Organization = require('./src/organization.js')
 const SyntaxHelper = require('./src/syntax.js')
 
-const imageFromHTML = require('./src/image.js')
+const htmlToSvg = require('./src/html-to-svg.js')
 
 exports.orgChart = functions.https.onCall((data, context) => {
 	const text = data.text
@@ -20,7 +19,7 @@ exports.orgChart = functions.https.onCall((data, context) => {
 	return {html: graphHTML}
 })
 
-exports.orgSvgData = functions.https.onCall((data, context) => {
+exports.orgSvgData = functions.https.onCall(async (data, context) => {
 	const text = data.text
 
 	const orgData = SyntaxHelper.data(text)
@@ -31,9 +30,13 @@ exports.orgSvgData = functions.https.onCall((data, context) => {
 
 	const graphHTML = organizationChart.outerHTML
 
-	//
+	console.log('graphHTML')
+	console.log(graphHTML)
 
-	//
+	const svgData = await htmlToSvg(graphHTML)
 
-	return imageFromHTML(graphHTML)
+	console.log('svgData')
+	console.log(svgData)
+
+	return {svgData: svgData, errors: []}
 })

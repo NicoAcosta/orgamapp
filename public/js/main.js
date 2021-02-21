@@ -18,6 +18,7 @@ const loadingModal = new bootstrap.Modal(
 	}
 )
 
+firebase.functions().useEmulator('localhost', 5001)
 const orgChart = firebase.functions().httpsCallable('orgChart')
 
 function graph() {
@@ -46,17 +47,6 @@ function graph() {
 				resultModal.show()
 			})
 		}, 200)
-
-		// domtoimage.toPng(organizationChart).then(function (dataUrl) {
-		// 	let image = document.createElement('img')
-		// 	image.src = dataUrl
-		// 	graphSketch.removeChild(graphSketch.firstChild)
-		// 	graphImageArea.appendChild(image)
-		// 	downloadButton.href = dataUrl
-		// 	loadingModal.hide()
-		// 	resultModal.toggle()
-		// 	resultModal.show()
-		// })
 	})
 }
 

@@ -29,7 +29,7 @@ String.prototype.arrowSplit = function () {
 // Separar por asesoría
 
 String.prototype.consultancySplit = function () {
-	return this.split(/\s*a>\s*/)
+	return this.split(/\s*a:\s*/)
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -41,7 +41,7 @@ class RegExHelper {
 	}
 
 	static isConsultancy(line) {
-		let regEx = /.+\sa>\s.+/
+		let regEx = /.+\sa:\s.+/
 		return regEx.test(line)
 	}
 
