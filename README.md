@@ -57,7 +57,7 @@ Departamento de Desarrollo --> Oficina de AI
 
 ### Definir asesorías
 
-Se utiliza el símbolo `a>`
+Se utiliza el símbolo `a:`
 
 ```
 Gerencia de Finanzas a: Asesoría Legal
