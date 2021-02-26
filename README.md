@@ -60,7 +60,7 @@ Departamento de Desarrollo --> Oficina de AI
 Se utiliza el símbolo `a>`
 
 ```
-Gerencia de Finanzas a> Asesoría Legal
+Gerencia de Finanzas a: Asesoría Legal
 ```
 *El gerente de Finanzas recibe asesoría en materia legal.*
 
