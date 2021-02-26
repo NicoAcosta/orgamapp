@@ -1,8 +1,8 @@
 const button = document.getElementById('button')
 const graphSketch = document.getElementById('graphSketch')
 const graphImageArea = document.getElementById('graphImageArea')
-const downloadButton = document.getElementById('downloadButton')
 const resultImage = document.getElementById('resultImage')
+const downloadButton = document.getElementById('downloadButton')
 downloadButton.download = 'orgamapp.png'
 
 const resultModal = new bootstrap.Modal(
@@ -20,28 +20,21 @@ const loadingModal = new bootstrap.Modal(
 )
 
 // firebase.functions().useEmulator('localhost', 5001)
-const orgChart = firebase.functions().httpsCallable('orgChart')
+// const orgChart = firebase.functions().httpsCallable('orgChart')
+const orgSvgData = firebase.functions().httpsCallable('orgSvgData')
 
 function graph() {
 	const textareaValue = document.getElementById('textarea').value
 
-	orgChart({text: textareaValue}).then((result) => {
-		const html = result.data.html
+	orgSvgData({text: textareaValue}).then((result) => {
+		const imageData = result.data.svgData
 
-		graphSketch.innerHTML = html
+		resultImage.src = imageData
 
-		const organizationChart = graphSketch.firstChild
-
-		setTimeout(() => {
-			domtoimage.toPng(organizationChart).then(function (dataUrl) {
-				resultImage.src = dataUrl
-				graphSketch.removeChild(graphSketch.firstChild)
-				downloadButton.href = dataUrl
-				loadingModal.hide()
-				resultModal.toggle()
-				resultModal.show()
-			})
-		}, 200)
+		downloadButton.href = imageData
+		loadingModal.hide()
+		resultModal.toggle()
+		resultModal.show()
 	})
 }
 

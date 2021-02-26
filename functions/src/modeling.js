@@ -170,11 +170,11 @@ class Area {
 		const consultancySeparation = GraphicHelper.divOfClass(
 			'consultancySeparation'
 		)
-		// const consultancyLine = GraphicHelper.divOfClass('consultancyLine')
-		// consultancySeparation.appendChild(consultancyLine)
-		const consultancyLine = document.createElement('img')
-		consultancyLine.src = 'images/dashed-line.png'
-		consultancyLine.classList.add('consultancyLine')
+
+		const consultancyLine = document.createElement('svg')
+		consultancyLine.id = 'consultancyLine'
+		consultancyLine.innerHTML = `<line x1="0" y1="75" x2="120" y2="75" stroke="black" stroke-dasharray="11 7" stroke-width="2"></line>`
+
 		consultancySeparation.appendChild(consultancyLine)
 
 		const consultancy = GraphicHelper.entegrama(this.consultancy)
