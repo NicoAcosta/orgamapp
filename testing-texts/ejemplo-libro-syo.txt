@@ -1,11 +1,11 @@
 raiz AGA
 AGA -> Directorio
 Directorio -> Gerencia General
-Gerencia General a> Asesoría Legal
+Gerencia General a: Asesoría Legal
 
 Gerencia General -> [Gerencia de Compras, Gerencia de Ventas, Gerencia Administrativa, Gerencia de Recursos Humanos, Gerencia de Servicios, Gerencia de Producción]
 
-Gerencia de Compras a> Asesoría Contable
+Gerencia de Compras a: Asesoría Contable
 Gerencia de Compras -> [Departamento emp. nacionales, Departamento Mercosur]
 
 Gerencia Administrativa --> [Oficina de Pagos y Cobranzas, Oficina de Liquidación de Sueldos]

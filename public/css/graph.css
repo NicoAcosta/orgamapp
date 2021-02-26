@@ -1,11 +1,11 @@
+html {
+	font-family: Verdana, sans-serif;
+}
+
 .graph {
 	color: black;
 	border-color: black;
 	background: white;
-}
-.amplio {
-	/* width: 3000px; */
-	height: 2000px;
 }
 
 .organizationChart {
@@ -72,6 +72,7 @@
 	width: 120px;
 	height: 200px;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 

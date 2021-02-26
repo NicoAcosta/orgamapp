@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="pTime"></p>
+    <p id="orgChart"></p>
+    <img src="" alt="" style="width: 100%;">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.2.9/firebase-functions.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script>
+
+        // firebase.functions().useEmulator('localhost', 5001)
+
+        const pTime = document.getElementById('pTime')
+        const pOrgChart = document.getElementById('orgChart')
+        const image = document.querySelector('img')
+        
+        const time = firebase.functions().httpsCallable('time')
+        const orgChart = firebase.functions().httpsCallable('orgChart')
+        const htmlToSvg = firebase.functions().httpsCallable('htmlToSvg')
+        const orgSvgData = firebase.functions().httpsCallable('orgSvgData')
+
+        time().then((result) => {
+            const now = result.data.time
+            console.log('time')
+            console.log(now)
+            pTime.innerHTML = now
+
+            orgChart({text: 'raiz a'}).then((result) => {
+                const html = result.data.html
+                console.log('orgChart')
+                console.log(html)
+                pOrgChart.innerText = html
+                
+                htmlToSvg({html: html}).then((result) => {
+                    const svgData = result.data.svgData
+                    console.log('svgData')
+                    console.log(svgData)
+                    image.src = svgData
+                })
+
+            })
+
+        })
+
+        
+
+    </script>
+
+</body>
+</html>
