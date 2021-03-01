@@ -46,7 +46,3 @@ function graphButton() {
 	window.scrollTo(0, 0)
 	graph()
 }
-
-// button.addEventListener('click', () => {
-// 	graphButton()
-// })

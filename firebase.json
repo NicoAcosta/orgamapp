@@ -8,10 +8,6 @@
     ],
     "rewrites": [
       {
-        "source": "/htmlToSvg",
-        "function": "htmlToSvg"
-      },
-      {
         "source": "/organizationChartSvg",
         "function": "organizationChartSvg"
       }
