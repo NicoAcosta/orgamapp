@@ -1,8 +1,5 @@
-const button = document.getElementById('button')
-const graphSketch = document.getElementById('graphSketch')
-const graphImageArea = document.getElementById('graphImageArea')
-const downloadButton = document.getElementById('downloadButton')
 const resultImage = document.getElementById('resultImage')
+const downloadButton = document.getElementById('downloadButton')
 downloadButton.download = 'orgamapp.png'
 
 const resultModal = new bootstrap.Modal(
@@ -19,30 +16,28 @@ const loadingModal = new bootstrap.Modal(
 	}
 )
 
-// firebase.functions().useEmulator('localhost', 5001)
-const orgChart = firebase.functions().httpsCallable('orgChart')
-
-function graph() {
+async function graph() {
 	const textareaValue = document.getElementById('textarea').value
 
-	orgChart({text: textareaValue}).then((result) => {
-		const html = result.data.html
-
-		graphSketch.innerHTML = html
-
-		const organizationChart = graphSketch.firstChild
-
-		setTimeout(() => {
-			domtoimage.toPng(organizationChart).then(function (dataUrl) {
-				resultImage.src = dataUrl
-				graphSketch.removeChild(graphSketch.firstChild)
-				downloadButton.href = dataUrl
-				loadingModal.hide()
-				resultModal.toggle()
-				resultModal.show()
-			})
-		}, 200)
+	const res = await fetch('https://orgamapp.web.app/organizationChartSvg', {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		method: 'post',
+		body: JSON.stringify({text: textareaValue}),
 	})
+
+	const json = await res.json()
+
+	const svgData = json.svgData
+	console.log('svgData')
+	console.log(svgData)
+
+	resultImage.src = svgData
+	downloadButton.href = svgData
+	loadingModal.hide()
+	resultModal.toggle()
+	resultModal.show()
 }
 
 function graphButton() {
@@ -52,6 +47,6 @@ function graphButton() {
 	graph()
 }
 
-button.addEventListener('click', () => {
-	graphButton()
-})
+// button.addEventListener('click', () => {
+// 	graphButton()
+// })

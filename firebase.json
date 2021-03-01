@@ -5,7 +5,17 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "rewrites": [
+      {
+        "source": "/htmlToSvg",
+        "function": "htmlToSvg"
+      },
+      {
+        "source": "/organizationChartSvg",
+        "function": "organizationChartSvg"
+      }
+   ]
   },
   "emulators": {
     "functions": {
