@@ -30,8 +30,6 @@ async function graph() {
 	const json = await res.json()
 
 	const svgData = json.svgData
-	console.log('svgData')
-	console.log(svgData)
 
 	resultImage.src = svgData
 	downloadButton.href = svgData
